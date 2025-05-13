@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evaluación Docente</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 30px;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #0056b3;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    select, button {
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004494;
+    }
+
+    .pregunta {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e9f1fb;
+      border-radius: 5px;
+    }
+
+    .opciones label {
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: normal;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #d4d4d4;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007acc;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f9ff;
+    }
+    nav {
+      background-color: #2c5282;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      color: #1b396a;
+    }
+  </style>
+</head>
+<body>
+     <nav>
+    <a href="Inicio.html">Inicio</a>
+    <a href="index.html">HU01</a>
+    <a href="2.html">HU02</a>
+    <a href="5.html">HU05</a>
+    <a href="7.html">HU07</a>
+    <a href="extra.html">Ayuda</a>
+  </nav>
+
+  <h1>Evaluación de docentes por estudiantes</h1>
+
+  <label for="docenteSelect">Seleccione el docente:</label>
+  <select id="docenteSelect">
+    <option value="">--Seleccionar--</option>
+    <option value="Juan Pérez">Juan Pérez</option>
+    <option value="Ana Gómez">Ana Gómez</option>
+    <option value="Luis Rodríguez">Luis Rodríguez</option>
+    <option value="María Torres">María Torres</option>
+    <option value="Pedro Sánchez">Pedro Sánchez</option>
+    <option value="Carmen Ruiz">Carmen Ruiz</option>
+    <option value="David Fernández">David Fernández</option>
+    <option value="Laura Morales">Laura Morales</option>
+    <option value="Jorge Castro">Jorge Castro</option>
+    <option value="Sofía Herrera">Sofía Herrera</option>
+    <option value="Manuel Ortega">Manuel Ortega</option>
+    <option value="Paula Mendoza">Paula Mendoza</option>
+    <option value="Andrés Salazar">Andrés Salazar</option>
+    <option value="Daniela Vega">Daniela Vega</option>
+  </select>
+
+  <label for="cursoSelect">Seleccione el curso:</label>
+  <select id="cursoSelect">
+    <option value="">--Seleccionar--</option>
+    <option>ACTIVIDADES CULTURALES</option>
+    <option>CÁLCULO I</option>
+    <option>ECONOMÍA DE LA EMPRESA</option>
+    <option>IDIOMA I</option>
+    <option>MATEMÁTICA BÁSICA</option>
+    <option>TEORÍA DE LA INFORMACIÓN Y CODIFICACIÓN</option>
+    <option>CÁLCULO II</option>
+    <option>CONTABILIDAD EMPRESARIAL</option>
+    <option>DIBUJO Y GEOMETRÍA DESCRIPTIVA</option>
+    <option>FÍSICA I</option>
+    <option>IDIOMA II</option>
+    <option>INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS</option>
+    <option>PROGRAMACIÓN ESTRUCTURADA</option>
+  </select>
+
+  <section id="encuesta" style="display:none;">
+    <form id="evaluacionForm">
+      <div class="pregunta">
+        <p>1. ¿El docente domina el tema?</p>
+        <div class="opciones">
+          <label><input type="radio" name="p1" value="1" required> 1</label>
+          <label><input type="radio" name="p1" value="2"> 2</label>
+          <label><input type="radio" name="p1" value="3"> 3</label>
+          <label><input type="radio" name="p1" value="4"> 4</label>
+          <label><input type="radio" name="p1" value="5"> 5</label>
+        </div>
+      </div>
+      <div class="pregunta">
+        <p>2. ¿Explica con claridad?</p>
+        <div class="opciones">
+          <label><input type="radio" name="p2" value="1" required> 1</label>
+          <label><input type="radio" name="p2" value="2"> 2</label>
+          <label><input type="radio" name="p2" value="3"> 3</label>
+          <label><input type="radio" name="p2" value="4"> 4</label>
+          <label><input type="radio" name="p2" value="5"> 5</label>
+        </div>
+      </div>
+      <div class="pregunta">
+        <p>3. ¿Responde a las dudas?</p>
+        <div class="opciones">
+          <label><input type="radio" name="p3" value="1" required> 1</label>
+          <label><input type="radio" name="p3" value="2"> 2</label>
+          <label><input type="radio" name="p3" value="3"> 3</label>
+          <label><input type="radio" name="p3" value="4"> 4</label>
+          <label><input type="radio" name="p3" value="5"> 5</label>
+        </div>
+      </div>
+
+      <button type="submit">Enviar Evaluación</button>
+    </form>
+  </section>
+
+  <h2>Evaluaciones Registradas</h2>
+  <table id="tablaResultados">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Docente</th>
+        <th>Curso</th>
+        <th>P1</th>
+        <th>P2</th>
+        <th>P3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Registros precargados -->
+      <tr><td>1</td><td>Juan Pérez</td><td>CÁLCULO I</td><td>5</td><td>4</td><td>5</td></tr>
+      <tr><td>2</td><td>Ana Gómez</td><td>PROGRAMACIÓN ESTRUCTURADA</td><td>4</td><td>5</td><td>5</td></tr>
+      <tr><td>3</td><td>Luis Rodríguez</td><td>IDIOMA I</td><td>3</td><td>4</td><td>4</td></tr>
+      <tr><td>4</td><td>Maria torres</td><td>FÍSICA I</td><td>2</td><td>3</td><td>2</td></tr>
+      <tr><td>5</td><td>Pedro Sanchez</td><td>DIBUJO Y GEOMETRÍA DESCRIPTIVA</td><td>5</td><td>5</td><td>5</td></tr>
+      <tr><td>6</td><td>Paula Mendoza</td><td>CONTABILIDAD EMPRESARIAL</td><td>4</td><td>4</td><td>3</td></tr>
+      <tr><td>7</td><td>Daniela Vega</td><td>CÁLCULO II</td><td>5</td><td>4</td><td>4</td></tr>
+      <tr><td>8</td><td>Sofia Herrera</td><td>MATEMÁTICA BÁSICA</td><td>3</td><td>3</td><td>3</td></tr>
+      <tr><td>9</td><td>Manuel Ortega</td><td>ECONOMÍA DE LA EMPRESA</td><td>4</td><td>5</td><td>4</td></tr>
+      <tr><td>10</td><td>Jorge Castro</td><td>ACTIVIDADES CULTURALES</td><td>5</td><td>5</td><td>5</td></tr>
+    </tbody>
+  </table>
+
+  <button>Enviar</button> <br>
+  Requisito minimo 80% de estudiantes
+
+
+  <script>
+    const docenteSelect = document.getElementById("docenteSelect");
+    const cursoSelect = document.getElementById("cursoSelect");
+    const encuestaSection = document.getElementById("encuesta");
+    const evaluacionForm = document.getElementById("evaluacionForm");
+    const tablaResultados = document.querySelector("#tablaResultados tbody");
+
+    let contador = 11;
+
+    function verificarSeleccion() {
+      encuestaSection.style.display = docenteSelect.value && cursoSelect.value ? "block" : "none";
+    }
+
+    docenteSelect.addEventListener("change", verificarSeleccion);
+    cursoSelect.addEventListener("change", verificarSeleccion);
+
+    evaluacionForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const p1 = document.querySelector('input[name="p1"]:checked').value;
+      const p2 = document.querySelector('input[name="p2"]:checked').value;
+      const p3 = document.querySelector('input[name="p3"]:checked').value;
+
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td>${contador++}</td>
+        <td>${docenteSelect.value}</td>
+        <td>${cursoSelect.value}</td>
+        <td>${p1}</td>
+        <td>${p2}</td>
+        <td>${p3}</td>
+      `;
+      tablaResultados.appendChild(fila);
+
+      evaluacionForm.reset();
+      encuestaSection.style.display = "none";
+      docenteSelect.value = "";
+      cursoSelect.value = "";
+    });
+  </script>
+
+</body>
+</html>

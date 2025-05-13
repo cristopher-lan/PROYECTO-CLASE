@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Docentes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .buscador {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .buscador input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    .buscador button {
+      padding: 10px 16px;
+      margin: 5px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-filtrar {
+      background-color: #3498db;
+      color: white;
+    }
+    .btn-filtrar:hover {
+      background-color: #2980b9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #2c3e50;
+      color: white;
+    }
+    .excelente {
+      color: green;
+      font-weight: bold;
+    }
+    .btn-certificado {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-capacitacion {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: default;
+    }
+    nav {
+      background-color: #2c5282;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      color: #1b396a;
+    }
+  </style>
+</head>
+<body>
+     <nav>
+    <a href="Inicio.html">Inicio</a>
+    <a href="index.html">HU01</a>
+    <a href="2.html">HU02</a>
+    <a href="5.html">HU05</a>
+    <a href="7.html">HU07</a>
+    <a href="extra.html">Ayuda</a>
+  </nav>
+
+  <h1>Lista de Docentes</h1>
+
+  <div class="buscador">
+    <input type="text" id="buscador" placeholder="Buscar por nombre..."><br>
+    <button class="btn-filtrar" onclick="filtrar('todos')">Mostrar Todos</button>
+    <button class="btn-filtrar" onclick="filtrar('destacados')">Destacados</button>
+    <button class="btn-filtrar" onclick="filtrar('capacitacion')">Capacitación</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre del Docente</th>
+        <th>Facultad</th>
+        <th>Programa</th>
+        <th>Nota</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-docentes">
+      <tr><td>Luis Juscamayta</td><td>FIEE</td><td>Electrónica</td><td>95</td><td></td></tr>
+      <tr><td>Victor Rocha</td><td>FIIS</td><td>Industrial</td><td>92</td><td></td></tr>
+      <tr><td>María Huamán</td><td>FCA</td><td>Administración</td><td>88</td><td></td></tr>
+      <tr><td>Rosa Delgado</td><td>FIQ</td><td>Química</td><td>97</td><td></td></tr>
+      <tr><td>Pedro Salas</td><td>FIPA</td><td>Pesquera</td><td>76</td><td></td></tr>
+      <tr><td>Lucía Paredes</td><td>FCE</td><td>Economía</td><td>91</td><td></td></tr>
+      <tr><td>Diego Ríos</td><td>FCS</td><td>Enfermería</td><td>82</td><td></td></tr>
+      <tr><td>Andrea Flores</td><td>FCC</td><td>Contabilidad</td><td>93</td><td></td></tr>
+      <tr><td>Juan Gutiérrez</td><td>FIARN</td><td>Ambiental</td><td>50</td><td></td></tr>
+      <tr><td>Carla Mendoza</td><td>FIME</td><td>Mecánica</td><td>98</td><td></td></tr>
+      <tr><td>Renzo Soto</td><td>FCNM</td><td>Matemáticas</td><td>89</td><td></td></tr>
+      <tr><td>Elena Barrera</td><td>FCS</td><td>Medicina</td><td>94</td><td></td></tr>
+      <tr><td>Oscar Vega</td><td>FCE</td><td>Economía</td><td>67</td><td></td></tr>
+      <tr><td>Daniela Torres</td><td>FIIS</td><td>Industrial</td><td>85</td><td></td></tr>
+      <tr><td>Bruno Sánchez</td><td>FCA</td><td>Marketing</td><td>58</td><td></td></tr>
+      <tr><td>Gabriela León</td><td>FIME</td><td>Mecánica</td><td>72</td><td></td></tr>
+      <tr><td>Julio Cárdenas</td><td>FIQ</td><td>Química</td><td>40</td><td></td></tr>
+      <tr><td>Sofía Poma</td><td>FCS</td><td>Psicología</td><td>91</td><td></td></tr>
+      <tr><td>Kevin Ramos</td><td>FIPA</td><td>Acuicultura</td><td>34</td><td></td></tr>
+      <tr><td>Camila Bravo</td><td>FIARN</td><td>Forestal</td><td>83</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const filas = document.querySelectorAll('#tabla-docentes tr');
+
+    function actualizarAcciones() {
+      filas.forEach(fila => {
+        const notaCell = fila.cells[3];
+        const nota = parseInt(notaCell.textContent);
+        const accionCell = fila.cells[4];
+
+        // Estilo de nota
+        if (nota >= 90) {
+          notaCell.classList.add('excelente');
+        } else {
+          notaCell.classList.remove('excelente');
+        }
+
+        // Acción según nota
+        if (nota >= 90) {
+          accionCell.innerHTML = '<button class="btn-certificado">Emitir Certificado</button>';
+        } else if (nota <= 59) {
+          accionCell.innerHTML = '<button class="btn-capacitacion">Capacitación</button>';
+        } else {
+          accionCell.innerHTML = '';
+        }
+      });
+    }
+
+    function filtrar(tipo) {
+      filas.forEach(fila => {
+        const nota = parseInt(fila.cells[3].textContent);
+        if (tipo === 'destacados' && nota >= 90) {
+          fila.style.display = '';
+        } else if (tipo === 'capacitacion' && nota <= 59) {
+          fila.style.display = '';
+        } else if (tipo === 'todos') {
+          fila.style.display = '';
+        } else {
+          fila.style.display = 'none';
+        }
+      });
+    }
+
+    document.getElementById('buscador').addEventListener('input', function () {
+      const filtro = this.value.toLowerCase();
+      filas.forEach(fila => {
+        const nombre = fila.cells[0].textContent.toLowerCase();
+        fila.style.display = nombre.includes(filtro) ? '' : 'none';
+      });
+    });
+
+    actualizarAcciones(); // Ejecutar al cargar
+  </script>
+
+</body>
+</html>
